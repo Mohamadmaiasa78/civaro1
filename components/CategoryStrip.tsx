@@ -1,20 +1,20 @@
 import React from 'react';
 
-// 1. Import your local images
-// "../" goes up one folder to find the images in the root
-import faceImg from '../facescrub.png';
-import cleansingImg from '../facecream.png';
-import bodyImg from '../hero1.png';      // Using hero1 for Body
-import multiUseImg from '../promade.png'; // Using promade for Multi-use
-import deodorantImg from '../three.png';  // Using three.png (assuming this is the deodorant)
-import specimenImg from '../hero3.png';   // Using hero3 for Specimen
+// 1. Import the images from your repository
+// We use '../' because the images are in the folder above 'components'
+import faceImg from '../face.png';
+import cleansingImg from '../cleansing.png';
+import bodyImg from '../body.png';
+import multiUseImg from '../multi-use.png';
+import deodorantImg from '../deoderant.png'; // Note: matches your file spelling
+import specimenImg from '../specimen.png';
 
 interface CategoryItem {
   name: string;
   image: string;
 }
 
-// 2. Use the variables DIRECTLY (no quotes, no url())
+// 2. Assign the imported variables directly to the image property
 const CATEGORIES: CategoryItem[] = [
   { name: 'Face', image: faceImg },
   { name: 'Cleansing', image: cleansingImg },
@@ -45,7 +45,6 @@ export const CategoryStrip: React.FC<{ onCategoryClick: (cat: string) => void }>
                 <div className="absolute inset-[-6px] rounded-full border border-white/5 group-hover:border-[#c5a059]/40 transition-all duration-700 scale-95 group-hover:scale-100 opacity-0 group-hover:opacity-100"></div>
                 
                 <div className="relative w-[85%] h-[85%] rounded-full overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
-                  {/* The image variable is used directly here in the src */}
                   <img 
                     src={cat.image} 
                     alt={cat.name} 
