@@ -1,20 +1,20 @@
 import React from 'react';
 
-// 1. Import your local images here
-// Note: We use '../' to go up one folder level to find the images
-import faceImg from '../face.png';
-import cleansingImg from '../cleansing.png';
-import bodyImg from '../body.png';
-import multiUseImg from '../multi-use.png';
-import deodorantImg from '../deoderant.png'; // Matches your filename spelling
-import specimenImg from '../specimen.png';
+// 1. Import your local images
+// "../" goes up one folder to find the images in the root
+import faceImg from '../facescrub.png';
+import cleansingImg from '../facecream.png';
+import bodyImg from '../hero1.png';      // Using hero1 for Body
+import multiUseImg from '../promade.png'; // Using promade for Multi-use
+import deodorantImg from '../three.png';  // Using three.png (assuming this is the deodorant)
+import specimenImg from '../hero3.png';   // Using hero3 for Specimen
 
 interface CategoryItem {
   name: string;
   image: string;
 }
 
-// 2. Assign the imported variables to the image property
+// 2. Use the variables DIRECTLY (no quotes, no url())
 const CATEGORIES: CategoryItem[] = [
   { name: 'Face', image: faceImg },
   { name: 'Cleansing', image: cleansingImg },
@@ -38,13 +38,14 @@ export const CategoryStrip: React.FC<{ onCategoryClick: (cat: string) => void }>
               className="flex flex-col items-center group space-y-6"
             >
               <div className="relative w-28 h-28 md:w-36 md:h-36 flex items-center justify-center">
-                {/* Visual Backdrop Circle (Reference: Blue tint) */}
+                {/* Visual Backdrop Circle */}
                 <div className="absolute inset-0 rounded-full bg-[#1a2233]/40 group-hover:bg-[#c5a059]/10 transition-colors duration-700"></div>
                 
                 {/* Gold ring accent */}
                 <div className="absolute inset-[-6px] rounded-full border border-white/5 group-hover:border-[#c5a059]/40 transition-all duration-700 scale-95 group-hover:scale-100 opacity-0 group-hover:opacity-100"></div>
                 
                 <div className="relative w-[85%] h-[85%] rounded-full overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+                  {/* The image variable is used directly here in the src */}
                   <img 
                     src={cat.image} 
                     alt={cat.name} 
