@@ -1,18 +1,27 @@
-
 import React from 'react';
+
+// 1. Import your local images here
+// Note: We use '../' to go up one folder level to find the images
+import faceImg from '../face.png';
+import cleansingImg from '../cleansing.png';
+import bodyImg from '../body.png';
+import multiUseImg from '../multi-use.png';
+import deodorantImg from '../deoderant.png'; // Matches your filename spelling
+import specimenImg from '../specimen.png';
 
 interface CategoryItem {
   name: string;
   image: string;
 }
 
+// 2. Assign the imported variables to the image property
 const CATEGORIES: CategoryItem[] = [
-  { name: 'Face', image: 'url(${heroImage})' },
-  { name: 'Cleansing', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=300' },
-  { name: 'Body', image: 'https://images.unsplash.com/photo-1631730359585-38a4935ccbb2?auto=format&fit=crop&q=80&w=300' },
-  { name: 'Multi-use', image: 'https://images.unsplash.com/photo-1603006905393-d2325372338c?auto=format&fit=crop&q=80&w=300' },
-  { name: 'Deodorant', image: 'https://images.unsplash.com/photo-1594125350485-3bb334c4426b?auto=format&fit=crop&q=80&w=300' },
-  { name: 'Specimen', image: 'https://images.unsplash.com/photo-1503706652255-ff3a58d63748?auto=format&fit=crop&q=80&w=300' },
+  { name: 'Face', image: faceImg },
+  { name: 'Cleansing', image: cleansingImg },
+  { name: 'Body', image: bodyImg },
+  { name: 'Multi-use', image: multiUseImg },
+  { name: 'Deodorant', image: deodorantImg },
+  { name: 'Specimen', image: specimenImg },
 ];
 
 export const CategoryStrip: React.FC<{ onCategoryClick: (cat: string) => void }> = ({ onCategoryClick }) => {
