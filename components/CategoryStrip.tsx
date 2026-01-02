@@ -1,12 +1,12 @@
 import React from 'react';
 
-// 1. Import the images from your repository
-// We use '../' because the images are in the folder above 'components'
+// 1. IMPORT the images from your local folder
+// We use '../' to go up one level from 'components/' to the root folder
 import faceImg from '../face.png';
 import cleansingImg from '../cleansing.png';
 import bodyImg from '../body.png';
 import multiUseImg from '../multi-use.png';
-import deodorantImg from '../deoderant.png'; // Note: matches your file spelling
+import deodorantImg from '../deoderant.png'; // This matches your specific spelling
 import specimenImg from '../specimen.png';
 
 interface CategoryItem {
@@ -14,7 +14,7 @@ interface CategoryItem {
   image: string;
 }
 
-// 2. Assign the imported variables directly to the image property
+// 2. USE the variables directly (No quotes, no 'url')
 const CATEGORIES: CategoryItem[] = [
   { name: 'Face', image: faceImg },
   { name: 'Cleansing', image: cleansingImg },
