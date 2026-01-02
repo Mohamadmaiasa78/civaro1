@@ -1,5 +1,6 @@
-
 import React from 'react';
+// 1. Importeer de afbeelding direct
+import heroImage from '../hero.png'; 
 
 interface HeroProps {
   scrollPos?: number;
@@ -14,7 +15,8 @@ export const Hero: React.FC<HeroProps> = ({ scrollPos = 0 }) => {
       <div 
         className="absolute inset-0 scale-125 transition-transform duration-100 ease-out"
         style={{
-          backgroundImage: `url('/hero.png')`,
+          // 2. Gebruik de geïmporteerde variabele hier
+          backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           transform: `translate3d(0, ${parallaxOffset}px, 0) scale(1.2)`,
