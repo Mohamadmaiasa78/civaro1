@@ -2,7 +2,7 @@ name: Deploy Vite App
 
 on:
   push:
-    branches: ["master"] # Ensure this matches your actual branch name (main or master)
+    branches: ["main"] # Zorg dat dit matcht met je branch (main of master)
   workflow_dispatch:
 
 permissions:
@@ -32,13 +32,11 @@ jobs:
         
       - name: Build
         run: npm run build
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # Optional: If you use secrets
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # <--- Uploads the BUILT app, not the source code
+          path: './dist' # Upload de map 'dist' die door build is gemaakt
 
   deploy:
     environment:
