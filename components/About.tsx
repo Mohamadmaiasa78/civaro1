@@ -1,5 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
+// 1. Importeer de afbeelding hier bovenaan
+import matthijsImg from '../matthijs.png';
 
 interface AboutProps {
   teaser?: boolean;
@@ -39,7 +40,8 @@ export const About: React.FC<AboutProps> = ({ teaser, onReadMore, scrollPos = 0 
             <div 
               className="absolute inset-0 transition-transform duration-[100ms] ease-out scale-110"
               style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=1200')`,
+                // 2. Gebruik de geïmporteerde variabele hier
+                backgroundImage: `url(${matthijsImg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transform: `translate3d(0, ${-parallaxValue}px, 0) scale(1.1)`,
