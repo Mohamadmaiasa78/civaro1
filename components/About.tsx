@@ -41,7 +41,7 @@ export const About: React.FC<AboutProps> = ({ teaser, onReadMore, scrollPos = 0 
               className="absolute inset-0 transition-transform duration-[100ms] ease-out scale-110"
               style={{
                 // 2. Gebruik de geïmporteerde variabele hier
-                backgroundImage: `https://raw.githubusercontent.com/Mohamadmaiasa78/civaro1/refs/heads/master/matthijs.png`,
+                backgroundImage: `url('https://raw.githubusercontent.com/Mohamadmaiasa78/civaro1/refs/heads/master/matthijs.png')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 transform: `translate3d(0, ${-parallaxValue}px, 0) scale(1.1)`,
